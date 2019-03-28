@@ -10,32 +10,33 @@ namespace NoSpaceInSentence
     {
         public static string noSpace(string sentence)   //string -> remove spaces
         {
-            string nospaces = " ";
-            //for (int i = 0; i < sentence.Length; i++)
-            //{
-            //    if (sentence[i] != ' ')
-            //    {
-
-            //        nospaces[i] += sentence[i];
-            //    }
-            //}
-            //return nospaces;
-
-
-            foreach (char letter in sentence)
+            string nospaces = "";
+            for (int i = 0; i < sentence.Length; i++)
             {
-
-                if (letter != ' ')
+                if (sentence[i] != ' ')
                 {
-                    string temp = char.ToString(letter);
-                    nospaces += temp;//(letter)
+                    nospaces += sentence[i];
                 }
             }
             return nospaces;
+
+            //string nospaces = "";
+            //foreach (char letter in sentence)
+            //{
+
+            //    if (letter != ' ')
+            //    {
+            //        string temp = char.ToString(letter);
+            //        nospaces += temp;//(letter)
+            //    }
+            //}
+            //return nospaces;
         }
         static void Main(string[] args)
         {
-            Console.WriteLine(noSpace("Hi how are you."));
+            Console.WriteLine("Write a sentence, and the space for your string will be stripped: ");
+            string input = Console.ReadLine();
+            Console.WriteLine(noSpace(input));
             Console.ReadLine();
         }
     }
